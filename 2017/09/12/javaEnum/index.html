@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      java中枚举类的使用 | 王金龙 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Panda">
+    
+    
+
+    <meta name="description" content="枚举：一些方法在运行时，它需要的数据不能是任意的，而必须是一定范围内的值，可以直接使用枚举予以解决。枚举类的定义格式： enum 类名{ //枚举值 } 枚举要注意的细节：   枚举类也是一个特殊的类。 枚举值默认的修饰符是public static final。（进行反编译得到源代码） 枚举值就是是枚举值所属的类的类型， 然后枚举值是指向了本类的对象的。 枚举类的构造方法默认的修饰符是priva">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java中枚举类的使用 | 王金龙">
+<meta property="og:url" content="https://github.com/MyselfWarmHome/MyselfWarmHome.github.io/blob/master/index.html/2017/09/12/javaEnum/index.html">
+<meta property="og:site_name" content="王金龙">
+<meta property="og:description" content="枚举：一些方法在运行时，它需要的数据不能是任意的，而必须是一定范围内的值，可以直接使用枚举予以解决。枚举类的定义格式： enum 类名{ //枚举值 } 枚举要注意的细节：   枚举类也是一个特殊的类。 枚举值默认的修饰符是public static final。（进行反编译得到源代码） 枚举值就是是枚举值所属的类的类型， 然后枚举值是指向了本类的对象的。 枚举类的构造方法默认的修饰符是priva">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/UT9LL9Y.png">
+<meta property="og:image" content="https://i.imgur.com/hbfwRkB.png">
+<meta property="og:updated_time" content="2017-09-12T19:27:56.256Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java中枚举类的使用 | 王金龙">
+<meta name="twitter:description" content="枚举：一些方法在运行时，它需要的数据不能是任意的，而必须是一定范围内的值，可以直接使用枚举予以解决。枚举类的定义格式： enum 类名{ //枚举值 } 枚举要注意的细节：   枚举类也是一个特殊的类。 枚举值默认的修饰符是public static final。（进行反编译得到源代码） 枚举值就是是枚举值所属的类的类型， 然后枚举值是指向了本类的对象的。 枚举类的构造方法默认的修饰符是priva">
+<meta name="twitter:image" content="https://i.imgur.com/UT9LL9Y.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 王金龙"><img src="/logo.png" width="80" alt="王金龙 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">王金龙</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          做一个丰盈的男子，不虚化，不浮躁，以先锋之姿去奋斗拼搏。
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">java中枚举类的使用</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-09-12" class="post-meta__date date">2017-09-12</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>枚举：一些方法在运行时，它需要的数据不能是任意的，而必须是一定范围内的值，可以直接使用枚举予以解决。<br>枚举类的定义格式：</p>
+<pre><code>enum 类名{
+//枚举值
+}
+</code></pre><p>枚举要注意的细节：</p>
+<hr>
+<ol>
+<li>枚举类也是一个特殊的类。</li>
+<li>枚举值默认的修饰符是public static final。（进行反编译得到源代码）</li>
+<li>枚举值就是是枚举值所属的类的类型， 然后枚举值是指向了本类的对象的。</li>
+<li>枚举类的构造方法默认的修饰符是private的。</li>
+<li>枚举类可以定义自己的成员变量与成员函数。</li>
+<li>枚举类可以自定义构造函数，但是构造函数的修饰符必须是private。</li>
+<li>枚举类可以存在抽象 的方法，但是枚举值必须要实现抽象 的方法。</li>
+<li><p>枚举值必须要位置枚举类 的第一个语句。</p>
+<pre><code>package com.auto;  
+/** 
+ * 作者：  王金龙 
+ * 下午2:58:18 
+ */  
+enum Sex{  
+    man(&quot;男&quot;) {  
+        public void run() {  
+
+            System.out.println(&quot;男人在跑...&quot;);  
+
+            }  
+            },woman(&quot;女&quot;) {  
+
+            public void run() {  
+
+            System.out.println(&quot;女人在跑...&quot;);  
+
+            }  
+            //枚举值  
+            ring value;//成员变量  
+            //构造函数  
+            private Sex(String  Value){  
+            this.value=Value;  
+            }  
+            //成员函数  
+            public void getValue(){  
+            System.out.println(&quot;value:&quot;+  value);  
+            }  
+            //抽象类  
+            public abstract void run();  
+            }  
+            public class Enumeration {  
+
+            public static void main(String[] args) {  
+            Sex sex = Sex.man;  
+            sex.value=&quot;男&quot;;  
+            sex.getValue();  
+            sex.run();  
+
+        }  
+
+    }
+</code></pre><p><img src="https://i.imgur.com/UT9LL9Y.png" alt=""></p>
+</li>
+</ol>
+<hr>
+<p>应用于一个小例子：<br>    enum Gender{<br>        man(“男”),woman(“女”);  </p>
+<pre><code>    String value;  
+
+    private Gender(String value){  
+    this.value = value;  
+    }  
+    }  
+
+
+    class Person{  
+
+    private String name;  
+
+    private Gender sex;  
+
+
+    public String getName() {  
+    return name;  
+    }  
+
+    public void setName(String name) {  
+    this.name = name;  
+    }  
+
+    public Gender getSex() {  
+    return sex;  
+    }  
+
+    public void setSex(Gender sex) {  
+    this.sex = sex;  
+    } 
+    }  
+
+    public class Demo6 {  
+
+    public static void main(String[] args) {  
+    Person p = new Person();  
+    p.setName(&quot;小花&quot;);  
+    p.setSex(Gender.woman);  
+    System.out.println(&quot;名字：&quot;+ p.getName()+&quot;   性别：&quot;+ p.getSex().value);  
+
+    }  
+
+}
+</code></pre><p><img src="https://i.imgur.com/hbfwRkB.png" alt=""></p>
+
+  </section>
+
+  <section class="post-comments">
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2144408"></script>
+<!-- UY END -->
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2016-2017 Panda</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

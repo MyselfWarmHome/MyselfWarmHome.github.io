@@ -7,7 +7,7 @@
     
 
     <title>
-      Archives 
+      拷贝图片 | 王金龙 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,13 +16,17 @@
     
     
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Archives">
-<meta property="og:url" content="https://github.com/MyselfWarmHome/MyselfWarmHome.github.io/blob/master/index.html/archives/index.html">
+    <meta name="description" content="package intputStream;    import java.io.File;   import java.io.FileInputStream;   import java.io.FileNotFoundException;   import java.io.FileOutputStream;   import java.io.IOException;    /**   * @aut">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拷贝图片 | 王金龙">
+<meta property="og:url" content="https://github.com/MyselfWarmHome/MyselfWarmHome.github.io/blob/master/index.html/2017/09/13/copyPicture/index.html">
 <meta property="og:site_name" content="王金龙">
+<meta property="og:description" content="package intputStream;    import java.io.File;   import java.io.FileInputStream;   import java.io.FileNotFoundException;   import java.io.FileOutputStream;   import java.io.IOException;    /**   * @aut">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-12T20:01:03.764Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Archives">
+<meta name="twitter:title" content="拷贝图片 | 王金龙">
+<meta name="twitter:description" content="package intputStream;    import java.io.File;   import java.io.FileInputStream;   import java.io.FileNotFoundException;   import java.io.FileOutputStream;   import java.io.IOException;    /**   * @aut">
     
     
     
@@ -149,118 +153,89 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-   <!-- do nothing -->
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">拷贝图片</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/09/13/copyPicture/" title="link to 拷贝图片">拷贝图片</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-09-13" class="post-list__meta--date date">2017-09-13</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/09/13/File/" title="link to IO的构造方法">IO的构造方法</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-09-13" class="post-list__meta--date date">2017-09-13</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/09/13/js/" title="link to 关于js中的onclick事件和JQuery中的click方法以及on方法事件的详解以及区别">关于js中的onclick事件和JQuery中的click方法以及on方法事件的详解以及区别</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-09-13" class="post-list__meta--date date">2017-09-13</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/09/13/jsad/" title="link to 使用javascript完成弹出广告">使用javascript完成弹出广告</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-09-13" class="post-list__meta--date date">2017-09-13</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/09/12/javaEnum/" title="link to java中枚举类的使用">java中枚举类的使用</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-09-12" class="post-list__meta--date date">2017-09-12</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
     
 
-    <span class="pagination__page-number"> 1 / 1</span>
+    <div class="post-meta">
+      <time datetime="2017-09-13" class="post-meta__date date">2017-09-13</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
     
     
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <pre><code>package intputStream;  
+
+import java.io.File;  
+import java.io.FileInputStream;  
+import java.io.FileNotFoundException;  
+import java.io.FileOutputStream;  
+import java.io.IOException;  
+
+/** 
+ * @author 王金龙 
+ * @date 创建时间: 2017-2-10 下午2:35:39 
+ * @version 1.0 
+ */  
+
+public class CopyPicture {  
+
+public static void main(String[] args) throws IOException {  
+//找到目标文件  
+File file = new File(&quot;F:\\1.jpg&quot;);  
+//给出输出目录  
+File file2 = new File(&quot;E:\\4.jpg&quot;);  
+ReadPicture(file,file2);  
+}  
+public static void ReadPicture(File file,File file2) throws IOException{  
+//建立读入通道  
+FileInputStream fileInputStream = new FileInputStream(file);  
+//建立缓冲数组配合循环读取文件数据  
+byte[] buf=new byte[1024];  
+int length = 0;  
+while((length = fileInputStream.read(buf))!=-1){  
+//边度边写  
+WriterPicture(buf,file2);  
+}  
+fileInputStream.close();  
+}  
+public static void WriterPicture(byte[] buf,File file2) throws IOException{  
+//建立写的通道  
+FileOutputStream fileOutputStream = new FileOutputStream(file2,true);  
+//写入数据  
+fileOutputStream.write(buf);  
+//关闭资源  
+fileOutputStream.close();  
+}  
+}  
+</code></pre>
+  </section>
+
+  <section class="post-comments">
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2144408"></script>
+<!-- UY END -->
+</section>
 
 
-</div>
+</article>
+
+
             <footer class="footer">
 
     <span class="footer__copyright">&copy; 2016-2017 Panda</span>
@@ -288,6 +263,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     
     
     <!--kill ie6 -->

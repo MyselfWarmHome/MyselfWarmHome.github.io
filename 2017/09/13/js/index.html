@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      关于js中的onclick事件和JQuery中的click方法以及on方法事件的详解以及区别 | 王金龙 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Panda">
+    
+    
+
+    <meta name="description" content="onclick是绑定的事件(它是一个事件)，注意该事件绑定只是JacaScript中有，Jquery中并没有此事件，告诉浏览器在鼠标点击时候要做什么   &amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;       &amp;lt;meta charset=&amp;quot;GBK&amp;quot;&amp;gt;       &amp;lt;title&amp;gt;测试onclick事件&amp;lt;/title&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于js中的onclick事件和JQuery中的click方法以及on方法事件的详解以及区别 | 王金龙">
+<meta property="og:url" content="https://github.com/MyselfWarmHome/MyselfWarmHome.github.io/blob/master/index.html/2017/09/13/js/index.html">
+<meta property="og:site_name" content="王金龙">
+<meta property="og:description" content="onclick是绑定的事件(它是一个事件)，注意该事件绑定只是JacaScript中有，Jquery中并没有此事件，告诉浏览器在鼠标点击时候要做什么   &amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;       &amp;lt;meta charset=&amp;quot;GBK&amp;quot;&amp;gt;       &amp;lt;title&amp;gt;测试onclick事件&amp;lt;/title&amp;gt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/OIzr0oh.png">
+<meta property="og:updated_time" content="2017-09-12T19:16:02.127Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于js中的onclick事件和JQuery中的click方法以及on方法事件的详解以及区别 | 王金龙">
+<meta name="twitter:description" content="onclick是绑定的事件(它是一个事件)，注意该事件绑定只是JacaScript中有，Jquery中并没有此事件，告诉浏览器在鼠标点击时候要做什么   &amp;lt;html&amp;gt;   &amp;lt;head&amp;gt;       &amp;lt;meta charset=&amp;quot;GBK&amp;quot;&amp;gt;       &amp;lt;title&amp;gt;测试onclick事件&amp;lt;/title&amp;gt;">
+<meta name="twitter:image" content="https://i.imgur.com/OIzr0oh.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+        <a href="/" title="link to homepage for 王金龙"><img src="/logo.png" width="80" alt="王金龙 logo" class="panel-cover__logo logo" /></a>
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">王金龙</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          做一个丰盈的男子，不虚化，不浮躁，以先锋之姿去奋斗拼搏。
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">关于js中的onclick事件和JQuery中的click方法以及on方法事件的详解以及区别</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-09-13" class="post-meta__date date">2017-09-13</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <ol>
+<li>onclick是绑定的事件(它是一个事件)，注意该事件绑定只是JacaScript中有，Jquery中并没有此事件，告诉浏览器在鼠标点击时候要做什么</li>
+</ol>
+<hr>
+<pre><code>&lt;html&gt;  
+&lt;head&gt;  
+    &lt;meta charset=&quot;GBK&quot;&gt;  
+    &lt;title&gt;测试onclick事件&lt;/title&gt;  
+    &lt;script type=&quot;text/javascript&quot;&gt;  
+        function mouse(){  
+            alert(&apos;我是一张图片!!!&apos;);  
+        }  
+    &lt;/script&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+    &lt;img src=&quot;../1.jpg&quot; alt=&quot;图片&quot; onclick=&quot;mouse()&quot;/&gt;  
+&lt;/body&gt;  
+</code></pre><p>`</p>
+<ol>
+<li>click方法(jquery中的)作用是触发onclick事件，只要执行了元素的click()方法，就会触发onclick事件。<br>click()方法的主要作用是触发调用click方法元素onclick事件,实际上是模拟了鼠标的点击动作。此外，如果在click括号内定义了其他可执行语句，则click方法会在执行完onclick事件之后执行括号内部的语句。<br><img src="https://i.imgur.com/OIzr0oh.png" alt=""></li>
+</ol>
+<hr>
+<ol>
+<li>on方法（jQuery中的),on()方法绑定事件处理程序到当前选定的jQuery对象中的元素。在jQuery 1.7中，.on()方法提供绑定事件处理程序所需的所有功能。(动态绑定事件处理函数)<br>该方法的参数有两种(参数中带中括号的参数可有可无，根据实际的需求去选择)</li>
+</ol>
+<ol>
+<li>on(events,[selector],[data],fn)<br>events:一个或多个用空格分隔的事件类型和可选的命名空间，如”click”或”keydown.myPlugin” 。<br>selector:一个选择器字符串用于过滤器的触发事件的选择器元素的后代。如果选择的&lt; null或省略，当它到达选定的元素，事件总是触发。<br>data:当一个事件被触发时要传递event.data给事件处理函数。<br>fn:该事件被触发时执行的函数。 false 值也可以做一个函数的简写，返回false。</li>
+<li>on(events-map,[selector],[data])<br>events-map:个用字符串表示的，一个或多个空格分隔的事件类型和可选的命名空间，值表示事件绑定的处理函数。<br>selector:一个选择器字符串过滤选定的元素，该选择器的后裔元素将调用处理程序。如果选择是空或被忽略，当它到达选定的元素，事件总是触发。<br>data:当一个事件被触发时要传递event.data给事件处理函数。<br>on方法是为匹配选择器的元素(现在匹配或者将来匹配)定义事件的处理函数</li>
+</ol>
+
+  </section>
+
+  <section class="post-comments">
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2144408"></script>
+<!-- UY END -->
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2016-2017 Panda</span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
