@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[拷贝图片]]></title>
       <url>/2017/09/13/copyPicture/</url>
-      <content type="html"><![CDATA[<pre><code>package intputStream;  
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><pre><code>package intputStream;  
 
 import java.io.File;  
 import java.io.FileInputStream;  
@@ -57,7 +57,7 @@ fileOutputStream.close();
     <entry>
       <title><![CDATA[IO的构造方法]]></title>
       <url>/2017/09/13/File/</url>
-      <content type="html"><![CDATA[<p>File类的构造方法：<br>File(String pathname);<br>File(File parent,String child);<br>File(String parent,String child);<br>目录分隔符：<br>在windows机器上目录分隔符是\,在Linux机器上目标分隔符是/。<br>注意：<br>在windows系统中\与/都可以做为目录分隔符，并且如果写/只需要写一个就可以。<br>import java.io.File;  </p>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>File类的构造方法：<br>File(String pathname);<br>File(File parent,String child);<br>File(String parent,String child);<br>目录分隔符：<br>在windows机器上目录分隔符是\,在Linux机器上目标分隔符是/。<br>注意：<br>在windows系统中\与/都可以做为目录分隔符，并且如果写/只需要写一个就可以。<br>import java.io.File;  </p>
 <pre><code>/** 
  * @author 王金龙 
  * @date 创建时间: 2017-2-9 上午10:09:03 
@@ -81,7 +81,7 @@ System.out.println(&quot;目录分隔符:&quot;+File.separator);
     <entry>
       <title><![CDATA[关于js中的onclick事件和JQuery中的click方法以及on方法事件的详解以及区别]]></title>
       <url>/2017/09/13/js/</url>
-      <content type="html"><![CDATA[<ol>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><ol>
 <li>onclick是绑定的事件(它是一个事件)，注意该事件绑定只是JacaScript中有，Jquery中并没有此事件，告诉浏览器在鼠标点击时候要做什么</li>
 </ol>
 <hr>
@@ -118,7 +118,7 @@ System.out.println(&quot;目录分隔符:&quot;+File.separator);
     <entry>
       <title><![CDATA[使用javascript完成弹出广告]]></title>
       <url>/2017/09/13/jsad/</url>
-      <content type="html"><![CDATA[<pre><code>&lt;span style=&quot;white-space:pre&quot;&gt;  &lt;/span&gt;var i=0;//记录次数  
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><pre><code>&lt;span style=&quot;white-space:pre&quot;&gt;  &lt;/span&gt;var i=0;//记录次数  
 var timer;//定时器id  
 
 //设置弹出广告  
@@ -154,7 +154,7 @@ function hiddAd(){
     <entry>
       <title><![CDATA[java中枚举类的使用]]></title>
       <url>/2017/09/12/javaEnum/</url>
-      <content type="html"><![CDATA[<p>枚举：一些方法在运行时，它需要的数据不能是任意的，而必须是一定范围内的值，可以直接使用枚举予以解决。<br>枚举类的定义格式：</p>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>枚举：一些方法在运行时，它需要的数据不能是任意的，而必须是一定范围内的值，可以直接使用枚举予以解决。<br>枚举类的定义格式：</p>
 <pre><code>enum 类名{
 //枚举值
 }
@@ -279,8 +279,27 @@ enum Sex{
       <title></title>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="大家好"><a href="#大家好" class="headerlink" title="大家好"></a>大家好</h2><h3 id="欢迎大家来到我的个人博客"><a href="#欢迎大家来到我的个人博客" class="headerlink" title="欢迎大家来到我的个人博客"></a>欢迎大家来到我的个人博客</h3><p>我的<a href="https://github.com/MyselfWarmHome/MyselfWarmHome.github.io">Github地址</a>欢迎大家来访问。</p>
+<p>这是我的<a href="/photo">个人相册</a>和<a href="/video">视频中心</a>。</p>
 <p>分享一个励志视频:<br><div id="dplayer0" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"autoplay":0,"theme":"#FADFA3","loop":1,"video":{"url":"http://111.13.171.12/vkp.tc.qq.com/AOWraqlpYMMrFb6JuHGkKIoaJSlwwoAwXNGrZJIMBSLo/g0013i98q1t.p201.1.mp4?sdtfrom","pic":"https://i.imgur.com/eKixmNd.png"}});</script><!-- dplayer used1 --></p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>/photo/index.html</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h2><p><img src="https://i.imgur.com/Bv4PW9z.jpg" alt=""></p>
+<p><img src="https://i.imgur.com/pq11kaj.jpg" alt=""></p>
+<p><img src="https://i.imgur.com/u8XuW1Z.jpg" alt=""></p>
+<p><img src="https://i.imgur.com/2qPPvI6.jpg" alt=""></p>
+<p><img src="https://i.imgur.com/B25VHYw.jpg" alt=""></p>
+<p><img src="https://i.imgur.com/xI3799X.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>/video/index.html</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><embed src="http://player.youku.com/player.php/sid/XMjY4MjY1MjM2OA==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash"><br><embed src="http://player.youku.com/player.php/sid/XMTQwMDk5ODE1Ng==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">]]></content>
     </entry>
     
   
