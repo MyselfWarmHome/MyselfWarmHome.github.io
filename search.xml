@@ -273,7 +273,7 @@ enum Sex{
       <title></title>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="大家好"><a href="#大家好" class="headerlink" title="大家好"></a>大家好</h2><h3 id="欢迎大家来到我的个人博客"><a href="#欢迎大家来到我的个人博客" class="headerlink" title="欢迎大家来到我的个人博客"></a>欢迎大家来到我的个人博客</h3><p>我的<a href="https://github.com/MyselfWarmHome/MyselfWarmHome.github.io">Github地址</a>欢迎大家来访问。</p>
-<p>这是我的<a href="/photo">个人相册</a>。</p>
+<p>这是我的<a href="/photo">个人相册</a>和个人视频<a href="/video">个人视频</a>。</p>
 <p>分享一个励志视频:<br><div id="dplayer0" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"autoplay":0,"theme":"#FADFA3","loop":1,"video":{"url":"http://111.13.171.12/vkp.tc.qq.com/AOWraqlpYMMrFb6JuHGkKIoaJSlwwoAwXNGrZJIMBSLo/g0013i98q1t.p201.1.mp4?sdtfrom","pic":"https://i.imgur.com/eKixmNd.png"}});</script><!-- dplayer used1 --></p>
 ]]></content>
     </entry>
@@ -286,12 +286,6 @@ enum Sex{
     
     <entry>
       <title></title>
-      <url>/video/index.html</url>
-      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><div id="dplayer1" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer1 = new DPlayer({"element":document.getElementById("dplayer1"),"autoplay":0,"theme":"#FADFA3","loop":1,"video":{"url":"http://111.13.137.55/vkp.tc.qq.com/A3sgyRXZH1qv2HKSnkiCT4s_v5tJtxsfabxA9hWRh-hc/f0016r5d57p.p201.1.mp4?sdtfrom","pic":"https://i.imgur.com/nOjjaC9.png"}});</script><!-- dplayer used1 -->]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
       <url>/photo/index.html</url>
       <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h2><p><img src="https://i.imgur.com/Bv4PW9z.jpg" alt=""></p>
 <p><img src="https://i.imgur.com/pq11kaj.jpg" alt=""></p>
@@ -300,6 +294,12 @@ enum Sex{
 <p><img src="https://i.imgur.com/B25VHYw.jpg" alt=""></p>
 <p><img src="https://i.imgur.com/xI3799X.jpg" alt=""></p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>/video/index.html</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><div id="dplayer1" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer1 = new DPlayer({"element":document.getElementById("dplayer1"),"autoplay":0,"theme":"#FADFA3","loop":1,"video":{"url":"http://111.13.137.55/vkp.tc.qq.com/A3sgyRXZH1qv2HKSnkiCT4s_v5tJtxsfabxA9hWRh-hc/f0016r5d57p.p201.1.mp4?sdtfrom","pic":"https://i.imgur.com/nOjjaC9.png"}});</script><!-- dplayer used1 -->]]></content>
     </entry>
     
   
