@@ -299,8 +299,7 @@ enum Sex{
     <entry>
       <title></title>
       <url>/video/index.html</url>
-      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p><embed src="http://player.youku.com/player.php/sid/XMjY4MjY1MjM2OA==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash"></p>
-<iframe height="498" width="510" src="http://player.youku.com/embed/XMjY4MjY1MjM2OA==" frameborder="0" 'allowfullscreen'=""></iframe>]]></content>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><div id="dplayer0" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"autoplay":0,"theme":"#FADFA3","loop":1,"video":{"url":"http://111.13.137.55/vkp.tc.qq.com/A3sgyRXZH1qv2HKSnkiCT4s_v5tJtxsfabxA9hWRh-hc/f0016r5d57p.p201.1.mp4?sdtfrom","pic":"https://i.imgur.com/nOjjaC9.png"}});</script><!-- dplayer used1 -->]]></content>
     </entry>
     
   
