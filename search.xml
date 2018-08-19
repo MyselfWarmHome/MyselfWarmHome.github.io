@@ -1,48 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[拷贝图片]]></title>
-    <url>%2F2017%2F09%2F13%2FcopyPicture%2F</url>
-    <content type="text"><![CDATA[package intputStream; import java.io.File; import java.io.FileInputStream; import java.io.FileNotFoundException; import java.io.FileOutputStream; import java.io.IOException; /** * @author 王金龙 * @date 创建时间: 2017-2-10 下午2:35:39 * @version 1.0 */ public class CopyPicture { public static void main(String[] args) throws IOException { //找到目标文件 File file = new File(&quot;F:\\1.jpg&quot;); //给出输出目录 File file2 = new File(&quot;E:\\4.jpg&quot;); ReadPicture(file,file2); } public static void ReadPicture(File file,File file2) throws IOException{ //建立读入通道 FileInputStream fileInputStream = new FileInputStream(file); //建立缓冲数组配合循环读取文件数据 byte[] buf=new byte[1024]; int length = 0; while((length = fileInputStream.read(buf))!=-1){ //边度边写 WriterPicture(buf,file2); } fileInputStream.close(); } public static void WriterPicture(byte[] buf,File file2) throws IOException{ //建立写的通道 FileOutputStream fileOutputStream = new FileOutputStream(file2,true); //写入数据 fileOutputStream.write(buf); //关闭资源 fileOutputStream.close(); } }]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[IO的构造方法]]></title>
-    <url>%2F2017%2F09%2F13%2FFile%2F</url>
-    <content type="text"><![CDATA[File类的构造方法：File(String pathname);File(File parent,String child);File(String parent,String child);目录分隔符：在windows机器上目录分隔符是\,在Linux机器上目标分隔符是/。注意：在windows系统中\与/都可以做为目录分隔符，并且如果写/只需要写一个就可以。import java.io.File; /** * @author 王金龙 * @date 创建时间: 2017-2-9 上午10:09:03 * @version 1.0 */ public class IO { public static void main(String[] args) { File file = new File(&quot;F:&quot;+File.separator+&quot;电影&quot;);//指定文件或文件夹的路径创建一个File文件 /*File parentFile = new File(&quot;F:\\&quot;); File file = new File(parentFile,&quot;电影&quot;);*/ //根据parent抽象路径名和child路径的名字符串创建一个新File实例 System.out.println(&quot;存在吗？&quot;+file.exists()); System.out.println(&quot;目录分隔符:&quot;+File.separator); } }]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[关于js中的onclick事件和JQuery中的click方法以及on方法事件的详解以及区别]]></title>
-    <url>%2F2017%2F09%2F13%2Fjs%2F</url>
-    <content type="text"><![CDATA[onclick是绑定的事件(它是一个事件)，注意该事件绑定只是JacaScript中有，Jquery中并没有此事件，告诉浏览器在鼠标点击时候要做什么 &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;GBK&quot;&gt; &lt;title&gt;测试onclick事件&lt;/title&gt; &lt;script type=&quot;text/javascript&quot;&gt; function mouse(){ alert(&apos;我是一张图片!!!&apos;); } &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;img src=&quot;../1.jpg&quot; alt=&quot;图片&quot; onclick=&quot;mouse()&quot;/&gt; &lt;/body&gt; ` click方法(jquery中的)作用是触发onclick事件，只要执行了元素的click()方法，就会触发onclick事件。click()方法的主要作用是触发调用click方法元素onclick事件,实际上是模拟了鼠标的点击动作。此外，如果在click括号内定义了其他可执行语句，则click方法会在执行完onclick事件之后执行括号内部的语句。 on方法（jQuery中的),on()方法绑定事件处理程序到当前选定的jQuery对象中的元素。在jQuery 1.7中，.on()方法提供绑定事件处理程序所需的所有功能。(动态绑定事件处理函数)该方法的参数有两种(参数中带中括号的参数可有可无，根据实际的需求去选择) on(events,[selector],[data],fn)events:一个或多个用空格分隔的事件类型和可选的命名空间，如”click”或”keydown.myPlugin” 。selector:一个选择器字符串用于过滤器的触发事件的选择器元素的后代。如果选择的&lt; null或省略，当它到达选定的元素，事件总是触发。data:当一个事件被触发时要传递event.data给事件处理函数。fn:该事件被触发时执行的函数。 false 值也可以做一个函数的简写，返回false。 on(events-map,[selector],[data])events-map:个用字符串表示的，一个或多个空格分隔的事件类型和可选的命名空间，值表示事件绑定的处理函数。selector:一个选择器字符串过滤选定的元素，该选择器的后裔元素将调用处理程序。如果选择是空或被忽略，当它到达选定的元素，事件总是触发。data:当一个事件被触发时要传递event.data给事件处理函数。on方法是为匹配选择器的元素(现在匹配或者将来匹配)定义事件的处理函数]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[使用javascript完成弹出广告]]></title>
-    <url>%2F2017%2F09%2F13%2Fjsad%2F</url>
-    <content type="text"><![CDATA[&lt;span style=&quot;white-space:pre&quot;&gt; &lt;/span&gt;var i=0;//记录次数 var timer;//定时器id //设置弹出广告 onload=function(){ //间隔四秒展示一次广告 timer = setInterval(showAd,4000); } //展示2秒以后隐藏广告的方法 function showAd(){ i++;//展示的次数加1 //若i等于3清空由setInterval设置的定时器 if(i==3){ clearInterval(timer); } //1.获取广告 var divObj = document.getElementById(&quot;ad&quot;); //2，修改广告的样式 divObj.style.display=&quot;block&quot;; //两秒之后隐藏 setTimeout(hiddAd,2000); } //隐藏广告 function hiddAd(){ var divObj = document.getElementById(&quot;ad&quot;); divObj.style.display=&quot;none&quot;; }]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[java中枚举类的使用]]></title>
-    <url>%2F2017%2F09%2F12%2FjavaEnum%2F</url>
-    <content type="text"><![CDATA[枚举：一些方法在运行时，它需要的数据不能是任意的，而必须是一定范围内的值，可以直接使用枚举予以解决。枚举类的定义格式： enum 类名{ //枚举值 } 枚举要注意的细节： 枚举类也是一个特殊的类。 枚举值默认的修饰符是public static final。（进行反编译得到源代码） 枚举值就是是枚举值所属的类的类型， 然后枚举值是指向了本类的对象的。 枚举类的构造方法默认的修饰符是private的。 枚举类可以定义自己的成员变量与成员函数。 枚举类可以自定义构造函数，但是构造函数的修饰符必须是private。 枚举类可以存在抽象 的方法，但是枚举值必须要实现抽象 的方法。 枚举值必须要位置枚举类 的第一个语句。 package com.auto; /** * 作者： 王金龙 * 下午2:58:18 */ enum Sex{ man(&quot;男&quot;) { public void run() { System.out.println(&quot;男人在跑...&quot;); } },woman(&quot;女&quot;) { public void run() { System.out.println(&quot;女人在跑...&quot;); } //枚举值 ring value;//成员变量 //构造函数 private Sex(String Value){ this.value=Value; } //成员函数 public void getValue(){ System.out.println(&quot;value:&quot;+ value); } //抽象类 public abstract void run(); } public class Enumeration { public static void main(String[] args) { Sex sex = Sex.man; sex.value=&quot;男&quot;; sex.getValue(); sex.run(); } } 应用于一个小例子： enum Gender{ man(“男”),woman(“女”); String value; private Gender(String value){ this.value = value; } } class Person{ private String name; private Gender sex; public String getName() { return name; } public void setName(String name) { this.name = name; } public Gender getSex() { return sex; } public void setSex(Gender sex) { this.sex = sex; } } public class Demo6 { public static void main(String[] args) { Person p = new Person(); p.setName(&quot;小花&quot;); p.setSex(Gender.woman); System.out.println(&quot;名字：&quot;+ p.getName()+&quot; 性别：&quot;+ p.getSex().value); } }]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2Fabout%2Findex.html</url>
-    <content type="text"><![CDATA[大家好欢迎大家来到我的个人博客我的Github地址欢迎大家来访问。 这是我的个人相册和个人视频。 分享一个励志视频:var dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"autoplay":0,"theme":"#FADFA3","loop":1,"video":{"url":"http://111.13.171.12/vkp.tc.qq.com/AOWraqlpYMMrFb6JuHGkKIoaJSlwwoAwXNGrZJIMBSLo/g0013i98q1t.p201.1.mp4?sdtfrom=v1010&guid=def5754f9d4cd5b03ab11057af0c8179&vkey=76E4485C56A2458BE7D641097986ECDCA09C98CE6119B95E3DE47E56834EDBF53C8F228107F34F151443D87B44892E3B4FEFE781BAD39CCF4AA4D64174E9EE2427FB1C67F0697CA9D74912D77732056F61E609684ECFD0DE7BF7E0E1DB5EF4F30934809EB204736AB05CA697D7254FC5&platform=2#t=183","pic":"https://i.imgur.com/eKixmNd.png"}});]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2Farchive%2Findex.html</url>
-    <content type="text"><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2Fphoto%2Findex.html</url>
-    <content type="text"><![CDATA[相册]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2Fvideo%2Findex.html</url>
-    <content type="text"><![CDATA[视频var dplayer1 = new DPlayer({"element":document.getElementById("dplayer1"),"autoplay":0,"theme":"#FADFA3","loop":1,"video":{"url":"http://111.13.137.55/vkp.tc.qq.com/A3sgyRXZH1qv2HKSnkiCT4s_v5tJtxsfabxA9hWRh-hc/f0016r5d57p.p201.1.mp4?sdtfrom=v1010&guid=def5754f9d4cd5b03ab11057af0c8179&vkey=1686F329429BC8076D139745DDC4BAC47389761C719BC03D2EB04439507F1442E95413CB183177697C15D940248D15379D928E038C6F1A5AF327119D8C3CE62BC6605DC48012C671A7F13F88BA8A7BF3BC42B158FCB8D18262B188CFEA935FD31EAA1363B7805F7D7DB89E456BA3DC68&platform=2","pic":"https://i.imgur.com/nOjjaC9.png"}});]]></content>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title>拷贝图片</title>
+      <link href="/2017/09/13/copyPicture/"/>
+      <url>/2017/09/13/copyPicture/</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p><img src="https://i.imgur.com/FGIbIjF.jpg" alt=""></p><pre><code>package intputStream;  import java.io.File;  import java.io.FileInputStream;  import java.io.FileNotFoundException;  import java.io.FileOutputStream;  import java.io.IOException;  /**  * @author 王金龙  * @date 创建时间: 2017-2-10 下午2:35:39  * @version 1.0  */  public class CopyPicture {  public static void main(String[] args) throws IOException {  //找到目标文件  File file = new File(&quot;F:\\1.jpg&quot;);  //给出输出目录  File file2 = new File(&quot;E:\\4.jpg&quot;);  ReadPicture(file,file2);  }  public static void ReadPicture(File file,File file2) throws IOException{  //建立读入通道  FileInputStream fileInputStream = new FileInputStream(file);  //建立缓冲数组配合循环读取文件数据  byte[] buf=new byte[1024];  int length = 0;  while((length = fileInputStream.read(buf))!=-1){  //边度边写  WriterPicture(buf,file2);  }  fileInputStream.close();  }  public static void WriterPicture(byte[] buf,File file2) throws IOException{  //建立写的通道  FileOutputStream fileOutputStream = new FileOutputStream(file2,true);  //写入数据  fileOutputStream.write(buf);  //关闭资源  fileOutputStream.close();  }  }  </code></pre>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>IO的构造方法</title>
+      <link href="/2017/09/13/File/"/>
+      <url>/2017/09/13/File/</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>File类的构造方法：<br>File(String pathname);<br>File(File parent,String child);<br>File(String parent,String child);<br>目录分隔符：<br>在windows机器上目录分隔符是\,在Linux机器上目标分隔符是/。<br>注意：<br>在windows系统中\与/都可以做为目录分隔符，并且如果写/只需要写一个就可以。<br>import java.io.File;  </p><pre><code>/**  * @author 王金龙  * @date 创建时间: 2017-2-9 上午10:09:03  * @version 1.0  */  public class IO {  public static void main(String[] args) {  File file = new File(&quot;F:&quot;+File.separator+&quot;电影&quot;);//指定文件或文件夹的路径创建一个File文件  /*File parentFile = new File(&quot;F:\\&quot;); File file = new File(parentFile,&quot;电影&quot;);*/ //根据parent抽象路径名和child路径的名字符串创建一个新File实例  System.out.println(&quot;存在吗？&quot;+file.exists());  System.out.println(&quot;目录分隔符:&quot;+File.separator);  }  } </code></pre>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>关于js中的onclick事件和JQuery中的click方法以及on方法事件的详解以及区别</title>
+      <link href="/2017/09/13/js/"/>
+      <url>/2017/09/13/js/</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><ol><li>onclick是绑定的事件(它是一个事件)，注意该事件绑定只是JacaScript中有，Jquery中并没有此事件，告诉浏览器在鼠标点击时候要做什么</li></ol><hr><pre><code>&lt;html&gt;  &lt;head&gt;      &lt;meta charset=&quot;GBK&quot;&gt;      &lt;title&gt;测试onclick事件&lt;/title&gt;      &lt;script type=&quot;text/javascript&quot;&gt;          function mouse(){              alert(&apos;我是一张图片!!!&apos;);          }      &lt;/script&gt;  &lt;/head&gt;  &lt;body&gt;      &lt;img src=&quot;../1.jpg&quot; alt=&quot;图片&quot; onclick=&quot;mouse()&quot;/&gt;  &lt;/body&gt;  </code></pre><p>`</p><ol start="2"><li>click方法(jquery中的)作用是触发onclick事件，只要执行了元素的click()方法，就会触发onclick事件。<br>click()方法的主要作用是触发调用click方法元素onclick事件,实际上是模拟了鼠标的点击动作。此外，如果在click括号内定义了其他可执行语句，则click方法会在执行完onclick事件之后执行括号内部的语句。<br><img src="https://i.imgur.com/OIzr0oh.png" alt=""></li></ol><hr><ol start="3"><li>on方法（jQuery中的),on()方法绑定事件处理程序到当前选定的jQuery对象中的元素。在jQuery 1.7中，.on()方法提供绑定事件处理程序所需的所有功能。(动态绑定事件处理函数)<br>该方法的参数有两种(参数中带中括号的参数可有可无，根据实际的需求去选择)</li></ol><ol><li>on(events,[selector],[data],fn)<br>events:一个或多个用空格分隔的事件类型和可选的命名空间，如”click”或”keydown.myPlugin” 。<br>selector:一个选择器字符串用于过滤器的触发事件的选择器元素的后代。如果选择的&lt; null或省略，当它到达选定的元素，事件总是触发。<br>data:当一个事件被触发时要传递event.data给事件处理函数。<br>fn:该事件被触发时执行的函数。 false 值也可以做一个函数的简写，返回false。</li><li>on(events-map,[selector],[data])<br>events-map:个用字符串表示的，一个或多个空格分隔的事件类型和可选的命名空间，值表示事件绑定的处理函数。<br>selector:一个选择器字符串过滤选定的元素，该选择器的后裔元素将调用处理程序。如果选择是空或被忽略，当它到达选定的元素，事件总是触发。<br>data:当一个事件被触发时要传递event.data给事件处理函数。<br>on方法是为匹配选择器的元素(现在匹配或者将来匹配)定义事件的处理函数</li></ol>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>使用javascript完成弹出广告</title>
+      <link href="/2017/09/13/jsad/"/>
+      <url>/2017/09/13/jsad/</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><pre><code>&lt;span style=&quot;white-space:pre&quot;&gt;  &lt;/span&gt;var i=0;//记录次数  var timer;//定时器id  //设置弹出广告  onload=function(){  //间隔四秒展示一次广告  timer = setInterval(showAd,4000);     }  //展示2秒以后隐藏广告的方法  function showAd(){      i++;//展示的次数加1      //若i等于3清空由setInterval设置的定时器      if(i==3){          clearInterval(timer);      }      //1.获取广告      var divObj = document.getElementById(&quot;ad&quot;);      //2，修改广告的样式      divObj.style.display=&quot;block&quot;;      //两秒之后隐藏      setTimeout(hiddAd,2000);  }  //隐藏广告  function hiddAd(){      var divObj = document.getElementById(&quot;ad&quot;);      divObj.style.display=&quot;none&quot;;  }</code></pre>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>java中枚举类的使用</title>
+      <link href="/2017/09/12/javaEnum/"/>
+      <url>/2017/09/12/javaEnum/</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><p>枚举：一些方法在运行时，它需要的数据不能是任意的，而必须是一定范围内的值，可以直接使用枚举予以解决。<br>枚举类的定义格式：</p><pre><code>enum 类名{//枚举值}</code></pre><p>枚举要注意的细节：</p><hr><ol><li>枚举类也是一个特殊的类。</li><li>枚举值默认的修饰符是public static final。（进行反编译得到源代码）</li><li>枚举值就是是枚举值所属的类的类型， 然后枚举值是指向了本类的对象的。</li><li>枚举类的构造方法默认的修饰符是private的。</li><li>枚举类可以定义自己的成员变量与成员函数。</li><li>枚举类可以自定义构造函数，但是构造函数的修饰符必须是private。</li><li>枚举类可以存在抽象 的方法，但是枚举值必须要实现抽象 的方法。</li><li><p>枚举值必须要位置枚举类 的第一个语句。</p><pre><code>package com.auto;  /**  * 作者：  王金龙  * 下午2:58:18  */  enum Sex{      man(&quot;男&quot;) {          public void run() {              System.out.println(&quot;男人在跑...&quot;);              }              },woman(&quot;女&quot;) {              public void run() {              System.out.println(&quot;女人在跑...&quot;);              }              //枚举值              ring value;//成员变量              //构造函数              private Sex(String  Value){              this.value=Value;              }              //成员函数              public void getValue(){              System.out.println(&quot;value:&quot;+  value);              }              //抽象类              public abstract void run();              }              public class Enumeration {              public static void main(String[] args) {              Sex sex = Sex.man;              sex.value=&quot;男&quot;;              sex.getValue();              sex.run();          }      }</code></pre><p><img src="https://i.imgur.com/UT9LL9Y.png" alt=""></p></li></ol><hr><p>应用于一个小例子：<br>    enum Gender{<br>        man(“男”),woman(“女”);  </p><pre><code>    String value;      private Gender(String value){      this.value = value;      }      }      class Person{      private String name;      private Gender sex;      public String getName() {      return name;      }      public void setName(String name) {      this.name = name;      }      public Gender getSex() {      return sex;      }      public void setSex(Gender sex) {      this.sex = sex;      }     }      public class Demo6 {      public static void main(String[] args) {      Person p = new Person();      p.setName(&quot;小花&quot;);      p.setSex(Gender.woman);      System.out.println(&quot;名字：&quot;+ p.getName()+&quot;   性别：&quot;+ p.getSex().value);      }  }</code></pre><p><img src="https://i.imgur.com/hbfwRkB.png" alt=""></p>]]></content>
+      
+      
+    </entry>
+    
+  
+  
+    
+    <entry>
+      <title></title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="大家好"><a href="#大家好" class="headerlink" title="大家好"></a>大家好</h2><h3 id="欢迎大家来到我的个人博客"><a href="#欢迎大家来到我的个人博客" class="headerlink" title="欢迎大家来到我的个人博客"></a>欢迎大家来到我的个人博客</h3><p>我的<a href="https://github.com/MyselfWarmHome/MyselfWarmHome.github.io">Github地址</a>欢迎大家来访问。</p><p>这是我的<a href="/photo">个人相册</a>和<a href="/video">个人视频</a>。</p><p>分享一个励志视频:</p><embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=p0704pft7ky&auto=0" allowfullscreen="true" quality="high" width="800" height="500" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
+      <link href="/archive/index.html"/>
+      <url>/archive/index.html</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script>]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
+      <link href="/video/index.html"/>
+      <url>/video/index.html</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="个人视频"><a href="#个人视频" class="headerlink" title="个人视频"></a>个人视频</h2><h3 id="图灵机器的未来"><a href="#图灵机器的未来" class="headerlink" title="图灵机器的未来"></a>图灵机器的未来</h3><embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=n0016jclqyl&auto=0" allowfullscreen="true" quality="high" width="800" height="500" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash"><h3 id="What’s-is-AI"><a href="#What’s-is-AI" class="headerlink" title="What’s is AI?"></a>What’s is AI?</h3><embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=k0760jj4sku&auto=0" allowfullscreen="true" quality="high" width="800" height="500" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
+      <link href="/photo/index.html"/>
+      <url>/photo/index.html</url>
+      <content type="html"><![CDATA[<script src="\assets\js\APlayer.min.js"> </script><h2 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h2><p><img src="https://i.imgur.com/Bv4PW9z.jpg" alt=""></p><p><img src="https://i.imgur.com/pq11kaj.jpg" alt=""></p><p><img src="https://i.imgur.com/u8XuW1Z.jpg" alt=""></p><p><img src="https://i.imgur.com/2qPPvI6.jpg" alt=""></p><p><img src="https://i.imgur.com/B25VHYw.jpg" alt=""></p><p><img src="https://i.imgur.com/xI3799X.jpg" alt=""></p>]]></content>
+    </entry>
+    
+  
 </search>
